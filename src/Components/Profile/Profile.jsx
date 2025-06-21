@@ -1,9 +1,9 @@
 
 import React from "react";
-import ProfileInfo from "../ProfileInfo-all/ProfileInfo";
-import Analytics from "../ProfileInfo-all/Analytics";
-import About from "../ProfileInfo-all/About";
-import Url from "../ProfileInfo-all/url";
+import ProfileInfo from "../ProfileInfoall/ProfileInfo";
+import Analytics from "../ProfileInfoall/Analytics";
+import About from "../ProfileInfoall/About";
+import Url from "../ProfileInfoall/url";
 
 const Profile = () => {
   return (
