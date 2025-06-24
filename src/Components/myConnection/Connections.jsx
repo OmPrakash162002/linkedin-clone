@@ -5,7 +5,7 @@ import { BsThreeDots } from "react-icons/bs";
 
 const Connections = () => {
   return (
-    <main className="bg-amber-50 pt-20 md:pt-25 pb-10 dark:bg-black/95">
+    <main className="bg-stone-200 pt-20 md:pt-25 pb-10 dark:bg-black/95">
       <div className="p-3 sm:p-4 md:p-5 lg:p-5 bg-white dark:bg-gray-900 dark:border-gray-700 w-full sm:w-full md:w-[80vw] lg:w-[70vw]  md:py-5 mx-0 sm:mx-1 md:mx-15  lg:mx-20  flex flex-col gap-4 border border-gray-200 rounded-2xl">
         <h1 className="text-xl dark:text-white">13 Connections</h1>
         <div className="flex flex-col gap-3 sm:gap-0 sm:flex-row justify-between ">

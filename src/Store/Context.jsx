@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const linkedinContext = createContext();
 
@@ -6,13 +6,32 @@ export const ContextProvider =({children})=>{
   
     // for form data 
     const [formdata , setFormdata] = useState({
-      fullName : "OM PRAKASH VISHWAKARMA",
-      Pronouns : "he/him",
+      fullName : "",
+      Pronouns : "",
       Headline : "",
       Education : "",
       Location : "",
     
     });
+
+    const[submit, setSubmit] = useState({
+      fullName : "OM PRAKASH VISHWAKARMA ",
+      Pronouns : "He/Him",
+      Headline : "Skilled in React JS | Passionate About Building Interactive and Scalable Frontend Web Applications | MCA'25",
+      Education : "Guru Ghasidas University",
+      Location : "Bilaspur chhattisgarh, India",
+    
+    });
+
+
+  //  for pursisting the form data when page refresh
+
+  useEffect(()=>{
+    const data = JSON.parse(localStorage.getItem('formData'));
+    if(data){
+      setSubmit(data);
+    }
+  },[])
 
 
     const handleChange =(e)=>{
@@ -27,7 +46,11 @@ export const ContextProvider =({children})=>{
 
       const handleFormSubmit =(e)=>{
         e.preventDefault();
+        localStorage.setItem('formData', JSON.stringify(formdata));
+        setSubmit(formdata);
+
       }
+
 
     //   for dark and light mode 
 
@@ -37,6 +60,41 @@ export const ContextProvider =({children})=>{
        setMode(!mode); 
     }
     
+
+    // for profile image 
+
+    const[editImage, setEditImage]   = useState(false);
+
+    const handleProfileImage =()=>{
+            setEditImage(!editImage);
+    }
+    
+    const [image, setImage] = useState(null);
+
+  // Load image from localStorage when the component mounts
+  useEffect(() => {
+    const savedImage = localStorage.getItem("savedImage");
+    if (savedImage) {
+      setImage(savedImage);
+    }
+  }, []);
+
+  // Handle image file input
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        const base64Image = reader.result;
+        setImage(base64Image);
+        localStorage.setItem("savedImage", base64Image); // save to localStorage
+      };
+
+      reader.readAsDataURL(file);
+    }
+  };
+    
    
     const objValue = {
       formdata,
@@ -45,6 +103,11 @@ export const ContextProvider =({children})=>{
       handleFormSubmit,
       handleTheme,
       mode,
+      submit,
+      handleProfileImage,
+      editImage,
+      handleImageChange,
+      image,
     
     }
      

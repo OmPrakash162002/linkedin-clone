@@ -5,6 +5,10 @@ import Profile from "./Components/Profile/Profile";
 import MyNetwork from "./Components/myNetwork/MyNetwork";
 import Connections from "./Components/myConnection/Connections";
 import EditProfileForm from "./Components/EditProfileInfo/EditProfileForm";
+import Home from "./Components/HomePage/Home";
+import Job from "./Components/JobsPage/Job";
+import Notification from "./Components/Notifications/Notification";
+import Messeging from "./Components/Messeging/Messeging";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -30,6 +34,24 @@ const App = () => {
           path: "/my network/connections",
           element: <Connections></Connections>,
         },
+        {
+          path : "/home",
+          element : <Home></Home>
+
+        },
+        {
+          path: "/jobs",
+          element : <Job></Job>
+        },
+        {
+          path : "/notifications",
+          element : <Notification></Notification>
+        },
+        {
+          path : "messaging",
+          element :<Messeging></Messeging>
+        }
+
       ],
     },
   ]);

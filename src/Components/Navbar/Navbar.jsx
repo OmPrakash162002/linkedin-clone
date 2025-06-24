@@ -14,7 +14,7 @@ const Navbar = () => {
     {
       name: "Home",
       logo: <TiHome></TiHome>,
-      path: "/Home",
+      path: "/home",
     },
     {
       name: "My Network",
@@ -24,17 +24,17 @@ const Navbar = () => {
     {
       name: "Jobs",
       logo: <IoBagHandle></IoBagHandle>,
-      path: "/Jobs",
+      path: "/jobs",
     },
     {
       name: "Messaging",
       logo: <RiMessage2Fill></RiMessage2Fill>,
-      path: "/Messaging",
+      path: "/messaging",
     },
     {
       name: "Notifications",
       logo: <IoNotifications></IoNotifications>,
-      path: "/Notifications",
+      path: "/notifications",
     },
   ];
 
